@@ -1,0 +1,10 @@
+/*------- page rtl css start------- */
+.hero-slider-thumb {
+  right: unset;
+  left: 0;
+}
+
+.about-area .about-area-wrapper .about-image {
+  left: 0;
+  right: unset;
+}

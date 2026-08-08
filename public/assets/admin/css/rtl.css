@@ -1,0 +1,33 @@
+form input,
+form textarea,
+form select {
+    direction: rtl !important;
+}
+
+form .note-editor.note-frame .note-editing-area .note-editable {
+    direction: rtl !important;
+    text-align: right !important;
+}
+
+form:not(.modal-form) input,
+
+form:not(.modal-form) textarea,
+form:not(.modal-form) select,
+select[name='language'] {
+    direction: rtl !important;
+}
+
+form:not(.modal-form) .note-editor.note-frame .note-editing-area .note-editable {
+    direction: rtl !important;
+    text-align: right !important;
+}
+
+input[type='url'] {
+    direction: ltr !important;
+    text-align: left;
+}
+
+form:not(.modal-form) .ltr {
+    direction: ltr !important;
+    text-align: left;
+}

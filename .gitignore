@@ -1,0 +1,37 @@
+# Dependencies
+/vendor/
+/node_modules/
+
+# Environment and secrets
+/.env
+/.env.*
+!/.env.example
+
+# Framework runtime files
+/storage/
+/storage/*.key
+/bootstrap/cache/*.php
+/.phpunit.result.cache
+
+# Database exports and dumps
+/database/*.sql
+/database/**/*.sql
+
+# Public build outputs
+/public/hot
+/public/storage
+
+# Local environment files
+/.vscode/
+/.idea/
+/.fleet/
+/.DS_Store
+/Thumbs.db
+
+# Local overrides and logs
+docker-compose.override.yml
+Homestead.json
+Homestead.yaml
+npm-debug.log*
+yarn-error.log*
+pnpm-debug.log*

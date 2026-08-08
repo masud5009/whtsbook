@@ -1,0 +1,74 @@
+/* inner pages rtl css */
+.blog-area .blog-card .blog-image .date {
+  border-radius: 0px 30px 30px 0px;
+  right: unset;
+  left: 0;
+}
+
+.blog-area .blog-card .title {
+  background: linear-gradient(
+    to left,
+    var(--bs-primary),
+    var(--bs-primary) 50%,
+    var(--bs-heading-color) 50%
+  );
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-size: 200% 100%;
+  background-position: 0%;
+}
+.blog-area .blog-card:hover .title {
+  background-position: 100% 0;
+}
+
+.widget-area .widget-search-form .btn-search {
+  left: 10px;
+  right: unset;
+}
+
+/* section-blog */
+.section-blog .blog-card .title {
+  background: linear-gradient(
+    to left,
+    var(--bs-primary),
+    var(--bs-primary) 50%,
+    var(--bs-heading-color) 50%
+  );
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-size: 200% 100%;
+  background-position: 0%;
+  transition: background-position 700ms ease;
+}
+.section-blog .blog-card:hover .title {
+  background-position: 100% 100%;
+}
+
+.blog-details-area .item-single .blog-image .date {
+  left: 0;
+  right: unset;
+  border-radius: 0 30px 30px 0;
+}
+.blog-details-area .item-single .blog-image .btn {
+  right: unset;
+  left: 30px;
+}
+.socialMediaModal .close {
+  margin-right: auto;
+  margin-left: 0;
+}
+.show-password-field {
+  left: 16px;
+  right: unset;
+}
+.contact-area .contact-info .contact-info-item::before {
+  background: linear-gradient(
+    -201deg,
+    rgba(66, 41, 255, 0) 37.65%,
+    var(--bs-primary) 151.6%
+  );
+  left: 0;
+  right: unset;
+}

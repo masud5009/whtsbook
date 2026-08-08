@@ -1,0 +1,21 @@
+<?php
+$payload = [
+    'messaging_product' => 'whatsapp',
+    'to' => $to,
+    'type' => 'interactive',
+    'interactive' => [
+        'type' => 'cta_url',
+        'header' => [
+            'type' => 'image',
+            'image' => ['link' => 'https://your-domain.com/path/to/image.jpg'],
+        ],
+        'body' => ['text' => $text],
+        'action' => [
+            'name' => 'cta_url',
+            'parameters' => [
+                'display_text' => 'Buy Now',
+                'url' => 'https://your-store.com/products/abc',
+            ],
+        ],
+    ],
+];

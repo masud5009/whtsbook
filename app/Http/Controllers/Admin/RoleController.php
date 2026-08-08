@@ -1,0 +1,89 @@
+<?php
+
+namespace App\Http\Controllers\Admin;
+
+use App\Models\Role;
+use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Session;
+use Illuminate\Support\Facades\Validator;
+
+class RoleController extends Controller
+{
+  public function index()
+  {
+    $data['roles'] = Role::all();
+    return view('admin.role.index', $data);
+  }
+
+  public function store(Request $request)
+  {
+
+    $rules = [
+      'name' => 'required|string |unique:roles,name| max:255',
+    ];
+    $validator = Validator::make($request->all(), $rules);
+    if ($validator->fails()) {
+      return response()->json([
+                'errors' => $validator->getMessageBag()->toArray()
+            ], 400);
+    }
+
+    $role = new Role;
+    $role->name = $request->name;
+    $role->save();
+
+    Session::flash('success', __('Created Successfully'));
+    return "success";
+  }
+
+  public function update(Request $request)
+  {
+    $rules = [
+      'name' => 'required|string|unique:roles,name,' . $request->role_id . '|max:255',
+    ];
+    $validator = Validator::make($request->all(), $rules);
+    if ($validator->fails()) {
+     return response()->json([
+                'errors' => $validator->getMessageBag()->toArray()
+            ], 400);
+    }
+
+    $role = Role::findOrFail($request->role_id);
+    $role->name = $request->name;
+    $role->save();
+
+    Session::flash('success', __('Updated Successfully'));
+    return "success";
+  }
+
+  public function delete(Request $request)
+  {
+    $role = Role::findOrFail($request->role_id);
+    if ($role->admins()->count() > 0) {
+      Session::flash('warning', __('Please delete the users under this role first.'));
+      return back();
+    }
+    $role->delete();
+
+    Session::flash('success', __('Deleted Successfully'));
+    return back();
+  }
+
+  public function managePermissions($id)
+  {
+    $data['role'] = Role::find($id);
+    return view('admin.role.permission.manage', $data);
+  }
+
+  public function updatePermissions(Request $request)
+  {
+    $permissions = json_encode($request->permissions);
+    $role = Role::find($request->role_id);
+    $role->permissions = $permissions;
+    $role->save();
+
+    Session::flash('success', __('Updated Successfully'));
+    return back();
+  }
+}
