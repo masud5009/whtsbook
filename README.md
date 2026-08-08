@@ -1,77 +1,81 @@
+---
+
 # WhatStay - WhatsApp AI Assistant for Hotel Booking Automation (SaaS)
 
-> **View-Only Repository** - This codebase is published as a portfolio and code-review showcase. It is intended for hiring managers and technical reviewers to inspect the structure, architecture, and implementation style.
->
-> **No reuse permission is granted** unless you receive written approval from the repository owner.
+> ⚠️ **View-Only Repository** — This code is publicly shared for portfolio and code review purposes only.
+> Unauthorized use, copying, or distribution is strictly prohibited. See [LICENSE](./LICENSE) for details.
 
 ---
 
 ## 📌 About This Project
 
-**WhatsBook** is a Laravel-based WhatsApp AI assistant and hotel booking automation SaaS. The repository is organized to make the code structure easy to review while keeping environment-specific secrets, generated files, and local-only artifacts out of version control.
+**WhatStay** (WhatsBook) is a multi-tenant, subscription-based (SaaS) WhatsApp AI assistant and hotel booking automation platform built with **Laravel** (PHP), developed under **KreativDev**. This repository is publicly shared as a portfolio showcase so that recruiters, technical leads, and hiring managers can review the code structure, architecture, and engineering practices.
 
 ---
 
 ## 🛠️ Tech Stack
 
-| Layer | Technology |
-| --- | --- |
-| Backend | PHP / Laravel 11 |
-| Frontend | Blade Templates, Laravel Mix, JavaScript |
-| Database | MySQL-compatible database schema |
-| Integrations | WhatsApp messaging, AI credits, payments, PDF, QR, sitemap |
-| Architecture | Service layer, traits, segmented routing |
+| Layer        | Technology                                                                          |
+|--------------|-------------------------------------------------------------------------------------|
+| Backend      | PHP / Laravel 11+                                                                   |
+| Frontend     | Blade Templates, JavaScript, Laravel Mix                                            |
+| Database     | MySQL                                                                               |
+| Auth         | Laravel Auth / Multi-Tenancy Guards, Sanctum                                        |
+| Integrations | WhatsApp Business API, AI Assistant & Knowledge Vault, Payment Gateways             |
+| Styling      | Bootstrap / CSS                                                                     |
 
 ---
 
 ## 🗂️ Project Structure Highlights
 
-- `app/Services` for business logic, gateways, and reusable service classes
-- `app/Traits` for shared application behavior
-- `routes/admin.php`, `routes/front.php`, and `routes/tenant.php` for feature-based route separation
-- `config/` for payment, installer, and integration settings
-- `database/` for schema, seeders, and demo-ready data
-- `resources/views/` for admin, frontend, user, and module-specific Blade views
+```
+whatsbook/
+├── app/
+│   ├── Http/Controllers/   # Admin, Tenant (User), Auth, Front & Webhook controllers
+│   ├── Services/           # AI, WhatsApp, Booking, Room & Payment services
+│   ├── Models/             # Eloquent models
+│   └── Traits/             # Shared application traits
+├── resources/
+│   ├── views/              # Blade templates (Admin, Tenant, Front)
+│   └── js/ / css/          # Frontend assets
+├── routes/
+│   ├── web.php / admin.php # Admin & Web routes
+│   ├── tenant.php / front.php # Tenant & Frontend routes
+│   └── api.php             # API routes
+├── database/
+│   ├── migrations/         # DB migrations
+│   └── seeders/            # DB seeders
+└── config/                 # App configurations
+```
 
 ---
 
 ## ✨ Authentic Key Features
 
-### 🤖 WhatsApp AI Assistant & Automation
-- WhatsApp workflow handling and template-based messaging support
-- AI credit and assistant-related business logic
-- Template, message, and variable-driven automation flows
+### 🤖 WhatsApp AI Assistant & Automation Engine
+- **24/7 AI-Powered Guest Assistant:** Automated guest inquiries and reservation assistance via WhatsApp using AI context models.
+- **AI Knowledge Vault:** Hotel owners can train their custom AI knowledge base with FAQs, policies, room details, and custom prompts.
+- **WhatsApp Workflow & Template Messaging:** Automated template messages, custom auto-response rules, and interactive bot chat triggers.
+- **AI Credit & Usage Tracking:** System to manage tenant AI credits, token consumption tracking, and usage limits.
 
-### 🏨 Hotel Booking & Service Management
-- Booking-oriented service details and availability flows
-- Room and booking-related service classes
-- Booking UI components and related admin management screens
+### 🏨 Multi-Tenant Hotel Booking & SaaS Marketplace
+- **Subscription Package Management:** Super-Admin creates flexible subscription plans (Free, Monthly, Yearly, Lifetime) for hotels with feature and AI token limits.
+- **Tenant & Hotel Admin Portal:** Dedicated dashboard for hotel managers to manage room listings, categories, availability, and reservations.
+- **Advanced Room & Availability Controls:** Real-time room availability management, seasonal pricing, check-in/out schedules, and custom booking adjustments.
+- **Multi-Staff Delegation:** Assign role-based access for front desk agents, operational managers, and hotel staff.
 
-### 💰 Payments & Operational Tools
-- Multi-gateway payment support
-- Offline and online payment flow support
-- Export, QR code, PDF, and sitemap tooling
+### 💰 Payments, Billing & Operational Tools
+- **Built-in Online Payment Gateways:** Integrated payment support including PayPal, Stripe, Mollie, Razorpay, Paystack, Flutterwave, Mercado Pago, MyFatoorah, PhonePe, and more.
+- **Offline & Direct Payment Methods:** Support for custom offline payment options and manual approval flows.
+- **PDF & QR Code Generator:** Automated PDF booking receipts, invoices, and custom QR codes for quick WhatsApp chat initiation.
+- **Sitemap & SEO Management:** Dynamic sitemap generation and SEO metadata tools.
 
-### ⚙️ Administrative & Review-Friendly Architecture
-- Segmented admin, frontend, and tenant routing
-- Centralized service layer for cleaner code review
-- Public showcase layout that highlights structure instead of secrets
+### 🌐 Advanced Frontend & User Experience
+- **Modern SaaS & Tenant Storefronts:** Conversion-focused, responsive layouts for SaaS marketing and individual hotel portals.
+- **Multilingual & RTL Support:** Complete multi-language translation engine with Right-to-Left (RTL) layout support.
+- **Custom Branding & Page Builders:** Visual menu builder, announcement popups, and customizable tenant branding settings.
 
----
-
-## 🔧 Local Setup
-
-1. Install PHP, Composer, and Node.js dependencies.
-2. Copy `.env.example` to `.env` and configure your local database and services.
-3. Run migrations and seeders if you need sample data.
-4. Build frontend assets with the project’s Laravel Mix commands.
-
----
-
-## 🔒 Public Showcase Notes
-
-- Keep `.env`, API keys, credentials, and production secrets untracked.
-- Avoid committing generated files and local-only build artifacts.
-- If you want a stricter public release, move private business rules to a separate private repository and keep this repo demo-safe.
-
----
+### ⚙️ Administrative & Platform Governance
+- **Support Ticket System:** Built-in support ticketing system for resolving guest and hotel tenant issues.
+- **Automated Cron Jobs & Webhooks:** Scheduled tasks for booking status updates, automated WhatsApp follow-ups, and secure webhook processing.
+- **Activity & Financial Logs:** Detailed logs for subscription transactions, payment histories, and AI usage metrics.
