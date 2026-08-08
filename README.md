@@ -1,4 +1,4 @@
-# WhatsBook
+# WhatStay - WhatsApp AI Assistant for Hotel Booking Automation (SaaS)
 
 > **View-Only Repository** - This codebase is published as a portfolio and code-review showcase. It is intended for hiring managers and technical reviewers to inspect the structure, architecture, and implementation style.
 >
@@ -75,7 +75,3 @@
 - If you want a stricter public release, move private business rules to a separate private repository and keep this repo demo-safe.
 
 ---
-
-## 📄 License
-
-This repository is distributed as **all rights reserved** for the project-specific source code and documentation. Third-party packages and vendor assets keep their own upstream licenses.
