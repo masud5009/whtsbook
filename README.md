@@ -3,6 +3,8 @@
 > ⚠️ **View-Only Repository** — This code is publicly shared for portfolio and code review purposes only.
 > Unauthorized use, copying, or distribution is strictly prohibited. See [LICENSE](./LICENSE) for details.
 
+---
+
 ## 📌 About This Project
 
 **WhatStay** (WhatsBook) is a multi-tenant, subscription-based (SaaS) WhatsApp AI assistant and hotel booking automation platform built with **Laravel** (PHP), developed under **KreativDev**. This repository is publicly shared as a portfolio showcase so that recruiters, technical leads, and hiring managers can review the code structure, architecture, and engineering practices.
